@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://cy1vqa475punu"]
+
+[ext_resource type="FontFile" uid="uid://bgu1xogee2pug" path="res://fonts/CONSOLA.TTF" id="1_8jokm"]
+[ext_resource type="Script" uid="uid://cv1hqdvivforj" path="res://scripts/warning_message.gd" id="2_lv2aw"]
+
+[sub_resource type="Animation" id="Animation_fgfcp"]
+resource_name = "fade in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.99, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_i3rmn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_18pth"]
+_data = {
+&"RESET": SubResource("Animation_i3rmn"),
+&"fade in": SubResource("Animation_fgfcp")
+}
+
+[node name="Warning" type="Node2D"]
+
+[node name="background" type="CanvasLayer" parent="."]
+layer = -128
+
+[node name="ColorRect" type="ColorRect" parent="background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="message" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 475.5
+offset_top = 304.5
+offset_right = 804.5
+offset_bottom = 415.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_8jokm")
+theme_override_font_sizes/font_size = 33
+text = "WARNING!
+
+This game contains flashing lights, loud
+noises, and lots of jumpscares!"
+horizontal_alignment = 1
+script = ExtResource("2_lv2aw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="message"]
+libraries = {
+&"": SubResource("AnimationLibrary_18pth")
+}

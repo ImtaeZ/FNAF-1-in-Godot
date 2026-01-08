@@ -1,0 +1,359 @@
+[gd_scene load_steps=46 format=3 uid="uid://b4xw5vr8o5qq0"]
+
+[ext_resource type="Texture2D" uid="uid://pjgtqhhqey20" path="res://textures/Oguri Twitch/1.png" id="1_2as01"]
+[ext_resource type="Texture2D" uid="uid://feikplv1ntx5" path="res://textures/Oguri Twitch/2.png" id="2_iq6fq"]
+[ext_resource type="Texture2D" uid="uid://drahkyw2j2wu8" path="res://textures/Oguri Twitch/3.png" id="3_mg5ff"]
+[ext_resource type="Texture2D" uid="uid://ccevynddr6vwy" path="res://textures/Oguri Twitch/4.png" id="4_52c44"]
+[ext_resource type="Script" uid="uid://b2rjcovpdj3dm" path="res://scripts/freddy twitch.gd" id="5_b3w7a"]
+[ext_resource type="Texture2D" uid="uid://cpw38sy74n45o" path="res://textures/static/12.png" id="6_7af2g"]
+[ext_resource type="Shader" uid="uid://dven4ab4riekq" path="res://shaders/remove black.gdshader" id="6_81wt4"]
+[ext_resource type="Texture2D" uid="uid://sajgyeiw0v05" path="res://textures/static/13.png" id="7_81wt4"]
+[ext_resource type="Texture2D" uid="uid://bqhi4adjyotg4" path="res://textures/static/14.png" id="8_kcc3o"]
+[ext_resource type="Texture2D" uid="uid://klxwiyxqckht" path="res://textures/static/15.png" id="9_6rcc6"]
+[ext_resource type="Texture2D" uid="uid://dbn5ss87iynfu" path="res://textures/static/16.png" id="10_ah8jo"]
+[ext_resource type="Texture2D" uid="uid://cvon8w23asuaf" path="res://textures/static/17.png" id="11_blk4q"]
+[ext_resource type="Texture2D" uid="uid://chobjdln4sfrw" path="res://textures/static/18.png" id="12_8magm"]
+[ext_resource type="Texture2D" uid="uid://t8pw3pda5611" path="res://textures/static/20.png" id="13_fgbvm"]
+[ext_resource type="Texture2D" uid="uid://comslgni10ljk" path="res://textures/static/8.png" id="17_k1qkb"]
+[ext_resource type="Texture2D" uid="uid://jc7y2ln5xai1" path="res://textures/static/10.png" id="19_iq6fq"]
+[ext_resource type="Texture2D" uid="uid://c6mdx4noow45n" path="res://textures/static/21.png" id="20_mg5ff"]
+[ext_resource type="Texture2D" uid="uid://cb1wljkdhs6fd" path="res://textures/static/22.png" id="21_52c44"]
+[ext_resource type="Texture2D" uid="uid://n1o78xvq2obq" path="res://textures/static/430.png" id="23_pv6bm"]
+[ext_resource type="Texture2D" uid="uid://b5d0djon0g6st" path="res://textures/static/434.png" id="24_6qeuo"]
+[ext_resource type="Texture2D" uid="uid://dircaskvurfb5" path="res://textures/static/435.png" id="25_hxnlc"]
+[ext_resource type="Texture2D" uid="uid://76okjunpog3q" path="res://textures/static/436.png" id="26_hgdh2"]
+[ext_resource type="Script" uid="uid://dnhyd8c6ua6or" path="res://scripts/divided_static.gd" id="26_opmo2"]
+[ext_resource type="Texture2D" uid="uid://vbf5l3pmrp5p" path="res://textures/static/437.png" id="27_3xwc1"]
+[ext_resource type="FontFile" uid="uid://bgu1xogee2pug" path="res://fonts/CONSOLA.TTF" id="27_a4fnx"]
+[ext_resource type="Script" uid="uid://fs2ect1yq2i5" path="res://scripts/menu_button.gd" id="28_75bkb"]
+[ext_resource type="Texture2D" uid="uid://daqjshtcdxbin" path="res://textures/static/438.png" id="28_gd8d8"]
+[ext_resource type="AudioStream" uid="uid://ulybp8a20for" path="res://audio/darkness music.wav" id="29_75bkb"]
+[ext_resource type="Texture2D" uid="uid://bttl5t7128wlo" path="res://textures/static/439.png" id="29_ebn1w"]
+[ext_resource type="AudioStream" uid="uid://dhpqrtwjamijr" path="res://audio/blip3.wav" id="29_k1qkb"]
+[ext_resource type="AudioStream" uid="uid://c3iuk52ku6dc6" path="res://audio/static.wav" id="30_cgg5c"]
+[ext_resource type="Texture2D" uid="uid://j72m0eo8oa2g" path="res://textures/newspaper/ogurinews.png" id="30_pqt7r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ia1n6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2as01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_iq6fq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mg5ff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_52c44")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kcc3o"]
+shader = ExtResource("6_81wt4")
+shader_parameter/threshold = 0.3
+shader_parameter/alpha = 0.4
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vjr5h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_7af2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_81wt4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kcc3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6rcc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ah8jo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_blk4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8magm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fgbvm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 60.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_owywo"]
+shader = ExtResource("6_81wt4")
+shader_parameter/threshold = 0.6
+shader_parameter/alpha = 0.2
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_81wt4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_k1qkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_iq6fq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_mg5ff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_52c44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_pv6bm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_6qeuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_hxnlc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_hgdh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_3xwc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_gd8d8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ebn1w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_opmo2"]
+offsets = PackedFloat32Array(0.006666667, 0.17333333, 0.46666667, 0.9266667, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_owywo"]
+gradient = SubResource("Gradient_opmo2")
+
+[sub_resource type="Animation" id="Animation_75bkb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(632, -54.000008)]
+}
+
+[sub_resource type="Animation" id="Animation_a4fnx"]
+resource_name = "scan"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 19.990643),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(632, -54.000008), Vector2(632, 812)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cgg5c"]
+_data = {
+&"RESET": SubResource("Animation_75bkb"),
+&"scan": SubResource("Animation_a4fnx")
+}
+
+[sub_resource type="Animation" id="Animation_mg5ff"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iq6fq"]
+resource_name = "fade"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 5, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.012617188, 0.012617188, 0.012617188, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_52c44"]
+_data = {
+&"RESET": SubResource("Animation_mg5ff"),
+&"fade": SubResource("Animation_iq6fq")
+}
+
+[node name="title" type="Node2D"]
+
+[node name="background" type="CanvasLayer" parent="."]
+layer = -128
+
+[node name="ColorRect" type="ColorRect" parent="background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="freddy" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ia1n6")
+frame_progress = 0.9985854
+centered = false
+script = ExtResource("5_b3w7a")
+
+[node name="rest" type="Timer" parent="freddy"]
+one_shot = true
+
+[node name="twitch" type="Timer" parent="freddy"]
+one_shot = true
+
+[node name="fade" type="Timer" parent="freddy"]
+wait_time = 0.3
+autostart = true
+
+[node name="static" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_kcc3o")
+sprite_frames = SubResource("SpriteFrames_vjr5h")
+autoplay = "default"
+frame = 1
+frame_progress = 0.0024396419
+centered = false
+
+[node name="divided static" type="AnimatedSprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_owywo")
+sprite_frames = SubResource("SpriteFrames_81wt4")
+autoplay = "default"
+frame = 2
+frame_progress = 0.58731234
+centered = false
+script = ExtResource("26_opmo2")
+
+[node name="rest" type="Timer" parent="divided static"]
+one_shot = true
+
+[node name="twitch" type="Timer" parent="divided static"]
+one_shot = true
+
+[node name="scan bar" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.11764706)
+position = Vector2(632, -54.000008)
+scale = Vector2(21.21875, 0.5781249)
+texture = SubResource("GradientTexture2D_owywo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="scan bar"]
+libraries = {
+&"": SubResource("AnimationLibrary_cgg5c")
+}
+autoplay = "scan"
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="Title" type="Label" parent="GUI"]
+texture_filter = 1
+offset_left = 163.0
+offset_top = 72.0
+offset_right = 383.0
+offset_bottom = 285.0
+theme_override_fonts/font = ExtResource("27_a4fnx")
+theme_override_font_sizes/font_size = 50
+text = "Five
+Nights
+At
+Oguri's"
+
+[node name="New Game" type="Label" parent="GUI"]
+texture_filter = 1
+offset_left = 163.0
+offset_top = 347.0
+offset_right = 383.0
+offset_bottom = 398.0
+mouse_filter = 0
+theme_override_fonts/font = ExtResource("27_a4fnx")
+theme_override_font_sizes/font_size = 50
+text = "New Game"
+script = ExtResource("28_75bkb")
+
+[node name="arrow" type="Label" parent="GUI"]
+texture_filter = 1
+offset_left = 91.0
+offset_top = 347.0
+offset_right = 146.0
+offset_bottom = 398.0
+theme_override_fonts/font = ExtResource("27_a4fnx")
+theme_override_font_sizes/font_size = 50
+text = ">>"
+
+[node name="continue" type="Label" parent="GUI"]
+texture_filter = 1
+offset_left = 163.0
+offset_top = 417.0
+offset_right = 383.0
+offset_bottom = 468.0
+mouse_filter = 0
+theme_override_fonts/font = ExtResource("27_a4fnx")
+theme_override_font_sizes/font_size = 50
+text = "Continue"
+script = ExtResource("28_75bkb")
+
+[node name="select" type="AudioStreamPlayer" parent="GUI"]
+stream = ExtResource("29_k1qkb")
+
+[node name="newspaper" type="TextureRect" parent="GUI"]
+process_mode = 3
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("30_pqt7r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GUI/newspaper"]
+libraries = {
+&"": SubResource("AnimationLibrary_52c44")
+}
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("29_75bkb")
+autoplay = true
+
+[node name="static sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("30_cgg5c")
+autoplay = true

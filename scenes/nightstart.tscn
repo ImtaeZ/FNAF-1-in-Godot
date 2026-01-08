@@ -1,0 +1,169 @@
+[gd_scene load_steps=25 format=3 uid="uid://djohxi6rr3fly"]
+
+[ext_resource type="FontFile" uid="uid://csg4m83lsoct2" path="res://fonts/LcdSolid-VPzB.ttf" id="1_l0p85"]
+[ext_resource type="Script" uid="uid://copumgoqk6r5o" path="res://scripts/nightmessage.gd" id="2_vb3t0"]
+[ext_resource type="Shader" uid="uid://dven4ab4riekq" path="res://shaders/remove black.gdshader" id="3_tlmu7"]
+[ext_resource type="Texture2D" uid="uid://d0fhmttlx75wn" path="res://textures/static/4.png" id="4_pssay"]
+[ext_resource type="Texture2D" uid="uid://bks8wf3ufo8ck" path="res://textures/static/6.png" id="5_3dc3g"]
+[ext_resource type="Texture2D" uid="uid://comslgni10ljk" path="res://textures/static/8.png" id="6_wgivf"]
+[ext_resource type="Texture2D" uid="uid://dw3a5cs23dc0g" path="res://textures/static/9.png" id="7_kgwga"]
+[ext_resource type="Texture2D" uid="uid://jc7y2ln5xai1" path="res://textures/static/10.png" id="8_nbng0"]
+[ext_resource type="Texture2D" uid="uid://c6mdx4noow45n" path="res://textures/static/21.png" id="9_skf4l"]
+[ext_resource type="Texture2D" uid="uid://cb1wljkdhs6fd" path="res://textures/static/22.png" id="10_4etn4"]
+[ext_resource type="Texture2D" uid="uid://cxw8gw3benkqj" path="res://textures/static/25.png" id="11_x8qav"]
+[ext_resource type="Texture2D" uid="uid://n1o78xvq2obq" path="res://textures/static/430.png" id="12_o2uts"]
+[ext_resource type="Texture2D" uid="uid://b5d0djon0g6st" path="res://textures/static/434.png" id="13_xby6c"]
+[ext_resource type="Texture2D" uid="uid://dircaskvurfb5" path="res://textures/static/435.png" id="14_a7a3l"]
+[ext_resource type="Texture2D" uid="uid://76okjunpog3q" path="res://textures/static/436.png" id="15_fq0rq"]
+[ext_resource type="Texture2D" uid="uid://vbf5l3pmrp5p" path="res://textures/static/437.png" id="16_dd7jy"]
+[ext_resource type="Texture2D" uid="uid://daqjshtcdxbin" path="res://textures/static/438.png" id="17_y830r"]
+[ext_resource type="Texture2D" uid="uid://bttl5t7128wlo" path="res://textures/static/439.png" id="18_sydwh"]
+[ext_resource type="AudioStream" uid="uid://dhpqrtwjamijr" path="res://audio/blip3.wav" id="19_pssay"]
+
+[sub_resource type="Animation" id="Animation_vb3t0"]
+resource_name = "fade out"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qw2eg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h5m3k"]
+_data = {
+&"RESET": SubResource("Animation_qw2eg"),
+&"fade out": SubResource("Animation_vb3t0")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bgpfo"]
+shader = ExtResource("3_tlmu7")
+shader_parameter/threshold = 0.1
+shader_parameter/alpha = 1.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tale6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_pssay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3dc3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wgivf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kgwga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nbng0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_skf4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4etn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_x8qav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_o2uts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_xby6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_a7a3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_fq0rq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_dd7jy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_y830r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_sydwh")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="Nightstart" type="Node2D"]
+
+[node name="background" type="CanvasLayer" parent="."]
+layer = -128
+
+[node name="ColorRect" type="ColorRect" parent="background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="nightmessage" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 619.5
+offset_top = 348.5
+offset_right = 660.5
+offset_bottom = 371.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_l0p85")
+theme_override_font_sizes/font_size = 40
+text = "12:00 AM
+1st Night"
+horizontal_alignment = 1
+script = ExtResource("2_vb3t0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="nightmessage"]
+libraries = {
+&"": SubResource("AnimationLibrary_h5m3k")
+}
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_bgpfo")
+sprite_frames = SubResource("SpriteFrames_tale6")
+autoplay = "default"
+frame = 15
+frame_progress = 1.0
+centered = false
+
+[node name="blip" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_pssay")
