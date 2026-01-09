@@ -1,4 +1,4 @@
-[gd_scene load_steps=177 format=3 uid="uid://bym566me85hba"]
+[gd_scene load_steps=178 format=3 uid="uid://bym566me85hba"]
 
 [ext_resource type="Shader" uid="uid://blrcxnhdcf6qx" path="res://shaders/perspective.gdshader" id="1_12wqr"]
 [ext_resource type="Texture2D" uid="uid://n73n8s1cn3ww" path="res://textures/Office inside/58.png" id="1_n0wcf"]
@@ -134,6 +134,7 @@
 [ext_resource type="Texture2D" uid="uid://bvx5ckpjsa4uw" path="res://jumpscare/foxy/412.png" id="132_u213d"]
 [ext_resource type="Texture2D" uid="uid://beenmi7ikrxmq" path="res://jumpscare/foxy/413.png" id="133_1moce"]
 [ext_resource type="Texture2D" uid="uid://cwlfpts5wecke" path="res://jumpscare/foxy/415.png" id="134_hywr7"]
+[ext_resource type="Shader" uid="uid://ixt7sqr0o2o3" path="res://shaders/rmgrey.gdshader" id="135_kk5cu"]
 [ext_resource type="Texture2D" uid="uid://kf40ft0jtyuv" path="res://textures/CameraFlip/rmbg/46-removebg-preview.png" id="135_mf0rt"]
 [ext_resource type="Texture2D" uid="uid://dohsqheu8m20q" path="res://textures/CameraFlip/rmbg/132-removebg-preview.png" id="136_3wu7e"]
 [ext_resource type="Texture2D" uid="uid://lpo34bxgi6ep" path="res://textures/CameraFlip/rmbg/133-removebg-preview.png" id="137_o16e4"]
@@ -788,9 +789,9 @@ _data = {
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3wu7e"]
-shader = ExtResource("13_jp1e5")
+shader = ExtResource("135_kk5cu")
+shader_parameter/target_color = Color(0.28, 0.28, 0.28, 1)
 shader_parameter/threshold = 0.1
-shader_parameter/alpha = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kk5cu"]
 size = Vector2(595, 44)
