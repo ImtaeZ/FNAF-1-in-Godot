@@ -1,4 +1,4 @@
-[gd_scene load_steps=203 format=3 uid="uid://bym566me85hba"]
+[gd_scene load_steps=204 format=3 uid="uid://bym566me85hba"]
 
 [ext_resource type="Shader" uid="uid://blrcxnhdcf6qx" path="res://shaders/perspective.gdshader" id="1_12wqr"]
 [ext_resource type="Texture2D" uid="uid://n73n8s1cn3ww" path="res://textures/Office inside/58.png" id="1_n0wcf"]
@@ -99,6 +99,7 @@
 [ext_resource type="Texture2D" uid="uid://dttp8nmsp51du" path="res://jumpscare/chica/228.png" id="97_ktwjf"]
 [ext_resource type="Texture2D" uid="uid://ds6rj2ut8221e" path="res://jumpscare/chica/229.png" id="98_tg1gr"]
 [ext_resource type="Texture2D" uid="uid://dggk56k1qaa14" path="res://jumpscare/chica/230.png" id="99_ldsnd"]
+[ext_resource type="AudioStream" uid="uid://bx81s8yxs4i3b" path="res://audio/CAMERA_VIDEO_LOA_60105303.wav" id="100_ikty1"]
 [ext_resource type="Texture2D" uid="uid://15tar7pep6mg" path="res://jumpscare/chica/231.png" id="100_m66co"]
 [ext_resource type="Texture2D" uid="uid://cv0khjrgf4frj" path="res://jumpscare/chica/232.png" id="101_n6omg"]
 [ext_resource type="Texture2D" uid="uid://bsxqbpclfxrmx" path="res://jumpscare/chica/233.png" id="102_wy5dh"]
@@ -1090,7 +1091,7 @@ stream = ExtResource("71_sesf4")
 [node name="light" type="AudioStreamPlayer2D" parent="LightOut"]
 stream = ExtResource("20_42gc7")
 
-[node name="freddyjumpscare" type="AnimatedSprite2D" parent="LightOut"]
+[node name="freddyjumpscare" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_tg1gr")
 frame = 20
@@ -1098,7 +1099,7 @@ frame_progress = 1.0
 centered = false
 offset = Vector2(160, 0)
 
-[node name="freddy jumpscarenoise" type="AudioStreamPlayer" parent="LightOut/freddyjumpscare"]
+[node name="freddy jumpscarenoise" type="AudioStreamPlayer" parent="freddyjumpscare"]
 stream = ExtResource("67_5uk4i")
 
 [node name="ShowStage" type="AnimatedSprite2D" parent="."]
@@ -1144,6 +1145,9 @@ sprite_frames = SubResource("SpriteFrames_j7vub")
 frame = 8
 frame_progress = 1.0
 centered = false
+
+[node name="flipnoise" type="AudioStreamPlayer" parent="WinningTimer/CameraFlip"]
+stream = ExtResource("100_ikty1")
 
 [node name="static" type="AnimatedSprite2D" parent="WinningTimer"]
 visible = false

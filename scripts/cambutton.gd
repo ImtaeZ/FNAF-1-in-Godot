@@ -16,8 +16,10 @@ func camInput() -> void:
 	if camstate == 1 :
 		$"../CameraFlip".visible = true
 		$"../CameraFlip".play()
+		$"../CameraFlip/flipnoise".play()
 		await $"../CameraFlip".animation_finished
 		$"../CameraFlip".visible = false
+		$"../CameraFlip/flipnoise".stop()
 		
 		# Show the UI
 		$"../static".visible = true
@@ -40,8 +42,10 @@ func camInput() -> void:
 		
 		$"../CameraFlip".visible = true
 		$"../CameraFlip".play_backwards()
+		$"../CameraFlip/flipnoise".play()
 		await $"../CameraFlip".animation_finished
 		$"../CameraFlip".visible = false
+		$"../CameraFlip/flipnoise".stop()
 
 	# 4. OPTIONAL: Add a tiny extra delay (Cooldown)
 	# This prevents the camera from accidentally popping back up instantly

@@ -65,8 +65,10 @@ func BonnieJumpscare() -> void:
 		camera_button.camstate = 1 
 		$"../WinningTimer/CameraFlip".visible = true
 		$"../WinningTimer/CameraFlip".play_backwards()
+		$"../WinningTimer/CameraFlip/flipnoise".play()
 		await $"../WinningTimer/CameraFlip".animation_finished
 		$"../WinningTimer/CameraFlip".visible = false
+		$"../WinningTimer/CameraFlip/flipnoise".stop()
 		$"../WinningTimer/cambutton/cam".visible = false
 	
 	await get_tree().create_timer(1.0, true).timeout
