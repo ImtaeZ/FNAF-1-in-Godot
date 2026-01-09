@@ -1,4 +1,4 @@
-[gd_scene load_steps=178 format=3 uid="uid://bym566me85hba"]
+[gd_scene load_steps=203 format=3 uid="uid://bym566me85hba"]
 
 [ext_resource type="Shader" uid="uid://blrcxnhdcf6qx" path="res://shaders/perspective.gdshader" id="1_12wqr"]
 [ext_resource type="Texture2D" uid="uid://n73n8s1cn3ww" path="res://textures/Office inside/58.png" id="1_n0wcf"]
@@ -144,8 +144,26 @@
 [ext_resource type="Texture2D" uid="uid://c72ahrvs6r01f" path="res://textures/CameraFlip/139.png" id="141_w04vo"]
 [ext_resource type="Texture2D" uid="uid://cxeexuhy3cci4" path="res://textures/CameraFlip/140.png" id="142_awxbk"]
 [ext_resource type="Texture2D" uid="uid://qpql3sv4kf56" path="res://textures/CameraFlip/141.png" id="143_hley2"]
-[ext_resource type="Texture2D" uid="uid://dkfcgd4dksmrb" path="res://textures/CameraFlip/campanel/420.png" id="144_3wu7e"]
 [ext_resource type="Script" uid="uid://d2p2chghetypx" path="res://scripts/cambutton.gd" id="145_o16e4"]
+[ext_resource type="Texture2D" uid="uid://cpw38sy74n45o" path="res://textures/static/12.png" id="147_05pie"]
+[ext_resource type="Texture2D" uid="uid://sajgyeiw0v05" path="res://textures/static/13.png" id="148_anhvg"]
+[ext_resource type="Texture2D" uid="uid://bqhi4adjyotg4" path="res://textures/static/14.png" id="149_ikty1"]
+[ext_resource type="Texture2D" uid="uid://klxwiyxqckht" path="res://textures/static/15.png" id="150_h8ouu"]
+[ext_resource type="Texture2D" uid="uid://dbn5ss87iynfu" path="res://textures/static/16.png" id="151_vpmm5"]
+[ext_resource type="Texture2D" uid="uid://cvon8w23asuaf" path="res://textures/static/17.png" id="152_rh6og"]
+[ext_resource type="Texture2D" uid="uid://chobjdln4sfrw" path="res://textures/static/18.png" id="153_6ah1i"]
+[ext_resource type="Texture2D" uid="uid://t8pw3pda5611" path="res://textures/static/20.png" id="154_5rlrg"]
+[ext_resource type="Texture2D" uid="uid://7s22f4ytttar" path="res://textures/CamScene/cammap.png" id="154_anhvg"]
+[ext_resource type="Texture2D" uid="uid://bt8lriphpmuhy" path="res://textures/CamScene/whiterect.png" id="155_k5r43"]
+[ext_resource type="Texture2D" uid="uid://bq5bwc7ppn3hf" path="res://textures/CameraFlip/campanel/420-removebg-preview.png" id="156_anhvg"]
+[ext_resource type="Texture2D" uid="uid://8qma0ppv0o8t" path="res://textures/CamScene/7.png" id="156_o7efp"]
+[ext_resource type="Texture2D" uid="uid://cas2r67ncf6p" path="res://textures/CamScene/showstage/2.png" id="157_0o2i4"]
+[ext_resource type="Texture2D" uid="uid://kqlarg80qswt" path="res://textures/CamScene/showstage/19.png" id="158_nwvie"]
+[ext_resource type="Texture2D" uid="uid://wi84seh26486" path="res://textures/CamScene/showstage/68.png" id="159_06rmy"]
+[ext_resource type="Texture2D" uid="uid://dmlx45sueyjk2" path="res://textures/CamScene/showstage/223.png" id="160_qo3cn"]
+[ext_resource type="Texture2D" uid="uid://d07ajuwp4es7a" path="res://textures/CamScene/showstage/224.png" id="161_anxu1"]
+[ext_resource type="Texture2D" uid="uid://du7kb5s7jdo6q" path="res://textures/CamScene/showstage/355.png" id="162_mmoyk"]
+[ext_resource type="Texture2D" uid="uid://bk3u0bgogjbbi" path="res://textures/CamScene/showstage/484.png" id="163_nq0uu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vilxk"]
 shader = ExtResource("1_12wqr")
@@ -369,54 +387,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_y13nk"]
 radius = 6.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_k6fhv"]
-shader = ExtResource("1_12wqr")
-shader_parameter/zoom = 0.015
-shader_parameter/sharpness = 2.0
-shader_parameter/direction = Vector2(1, 0)
-shader_parameter/wrapping_mode = 1
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_peo4i"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("56_73m2f")
-}, {
-"duration": 1.0,
-"texture": ExtResource("57_qakv3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("58_c12kp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("59_dwir6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("60_sesf4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("61_wx8ly")
-}, {
-"duration": 1.0,
-"texture": ExtResource("62_dqvlh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("63_1d6ln")
-}, {
-"duration": 1.0,
-"texture": ExtResource("64_xbmoe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("65_gogr1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("66_ld7wk")
-}],
-"loop": true,
-"name": &"default",
-"speed": 20.0
-}]
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sesf4"]
 shader = ExtResource("1_12wqr")
 shader_parameter/zoom = 0.015
@@ -503,6 +473,337 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("92_ktwjf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b4ftb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("157_0o2i4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_nwvie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_06rmy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_qo3cn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_anxu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_mmoyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_nq0uu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_ldsnd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("winningscene:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tg1gr"]
+resource_name = "fadewin"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("winningscene:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m66co"]
+_data = {
+&"RESET": SubResource("Animation_ldsnd"),
+&"fadewin": SubResource("Animation_tg1gr")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j7vub"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("135_mf0rt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_3wu7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_o16e4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_kk5cu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_v5tqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_edt80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_w04vo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_awxbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_hley2")
+}],
+"loop": false,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s83nt"]
+shader = ExtResource("13_jp1e5")
+shader_parameter/threshold = 0.3
+shader_parameter/alpha = 0.35
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1q6nw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("147_05pie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_anhvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("149_ikty1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("150_h8ouu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151_vpmm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152_rh6og")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_6ah1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_5rlrg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 60.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4lrrt"]
+shader = ExtResource("13_jp1e5")
+shader_parameter/threshold = 0.1
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_anhvg"]
+shader = ExtResource("13_jp1e5")
+shader_parameter/threshold = 0.1
+shader_parameter/alpha = 1.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pnkqm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("156_o7efp")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.5
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ikty1"]
+shader = ExtResource("13_jp1e5")
+shader_parameter/threshold = 0.1
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3wu7e"]
+shader = ExtResource("135_kk5cu")
+shader_parameter/target_color = Color(0.28, 0.28, 0.28, 1)
+shader_parameter/threshold = 0.1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kk5cu"]
+size = Vector2(595, 93)
+
+[sub_resource type="Animation" id="Animation_oeypd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/5:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/6:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/6:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(510, 306)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/5:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(548, 315)]
+}
+
+[sub_resource type="Animation" id="Animation_mg68r"]
+resource_name = "sliding"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/5:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/6:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/6:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(548, 400), Vector2(548, 315)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/5:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(548, 315), Vector2(548, 203)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ix8h7"]
+_data = {
+&"RESET": SubResource("Animation_oeypd"),
+&"sliding": SubResource("Animation_mg68r")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k6fhv"]
+shader = ExtResource("1_12wqr")
+shader_parameter/zoom = 0.015
+shader_parameter/sharpness = 2.0
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/wrapping_mode = 1
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_peo4i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_73m2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_qakv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_c12kp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_dwir6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_sesf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_wx8ly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_dqvlh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_1d6ln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_xbmoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_gogr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_ld7wk")
 }],
 "loop": true,
 "name": &"default",
@@ -643,194 +944,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Animation" id="Animation_oeypd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/5:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Control/6:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Control/6:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(510, 306)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Control/5:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(548, 315)]
-}
-
-[sub_resource type="Animation" id="Animation_mg68r"]
-resource_name = "sliding"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/5:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Control/6:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Control/6:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(548, 400), Vector2(548, 315)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Control/5:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(548, 315), Vector2(548, 203)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ix8h7"]
-_data = {
-&"RESET": SubResource("Animation_oeypd"),
-&"sliding": SubResource("Animation_mg68r")
-}
-
-[sub_resource type="Animation" id="Animation_ldsnd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("winningscene:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_tg1gr"]
-resource_name = "fadewin"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("winningscene:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_m66co"]
-_data = {
-&"RESET": SubResource("Animation_ldsnd"),
-&"fadewin": SubResource("Animation_tg1gr")
-}
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3wu7e"]
-shader = ExtResource("135_kk5cu")
-shader_parameter/target_color = Color(0.28, 0.28, 0.28, 1)
-shader_parameter/threshold = 0.1
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kk5cu"]
-size = Vector2(595, 44)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_j7vub"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("135_mf0rt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("136_3wu7e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("137_o16e4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("138_kk5cu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("139_v5tqt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("140_edt80")
-}, {
-"duration": 1.0,
-"texture": ExtResource("141_w04vo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("142_awxbk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("143_hley2")
-}],
-"loop": false,
-"name": &"default",
-"speed": 30.0
-}]
-
 [node name="Office" type="Node2D"]
 
 [node name="background" type="CanvasLayer" parent="."]
@@ -950,24 +1063,8 @@ stream = ExtResource("53_12wqr")
 [node name="windowscare" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("55_y13nk")
 
-[node name="BonnieJumpscare" type="AnimatedSprite2D" parent="."]
-process_mode = 3
-visible = false
-material = SubResource("ShaderMaterial_k6fhv")
-sprite_frames = SubResource("SpriteFrames_peo4i")
-frame = 10
-frame_progress = 1.0
-centered = false
-
 [node name="JumpScare noise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("67_5uk4i")
-
-[node name="BonnieAI" type="Node" parent="."]
-script = ExtResource("68_qakv3")
-
-[node name="MoveTimer" type="Timer" parent="BonnieAI"]
-wait_time = 4.970000000000001
-autostart = true
 
 [node name="ChicaAI" type="Node" parent="."]
 script = ExtResource("93_qkc7n")
@@ -1004,17 +1101,10 @@ offset = Vector2(160, 0)
 [node name="freddy jumpscarenoise" type="AudioStreamPlayer" parent="LightOut/freddyjumpscare"]
 stream = ExtResource("67_5uk4i")
 
-[node name="ChicaJumpscare" type="AnimatedSprite2D" parent="."]
+[node name="ShowStage" type="AnimatedSprite2D" parent="."]
 visible = false
-sprite_frames = SubResource("SpriteFrames_1hmql")
-frame_progress = 0.44414335
-centered = false
-
-[node name="FoxyJumpscare" type="AnimatedSprite2D" parent="."]
-visible = false
-material = SubResource("ShaderMaterial_be1o8")
-sprite_frames = SubResource("SpriteFrames_22t6e")
-frame_progress = 0.49731714
+sprite_frames = SubResource("SpriteFrames_b4ftb")
+frame = 1
 centered = false
 
 [node name="WinningTimer" type="CanvasLayer" parent="."]
@@ -1042,6 +1132,73 @@ theme_override_fonts/font = ExtResource("110_soevi")
 theme_override_font_sizes/font_size = 30
 text = "Night 1"
 horizontal_alignment = 1
+
+[node name="fadewinning" type="AnimationPlayer" parent="WinningTimer"]
+libraries = {
+&"": SubResource("AnimationLibrary_m66co")
+}
+
+[node name="CameraFlip" type="AnimatedSprite2D" parent="WinningTimer"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_j7vub")
+frame = 8
+frame_progress = 1.0
+centered = false
+
+[node name="static" type="AnimatedSprite2D" parent="WinningTimer"]
+visible = false
+material = SubResource("ShaderMaterial_s83nt")
+sprite_frames = SubResource("SpriteFrames_1q6nw")
+autoplay = "default"
+centered = false
+
+[node name="whiterect" type="TextureRect" parent="WinningTimer"]
+visible = false
+material = SubResource("ShaderMaterial_4lrrt")
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("155_k5r43")
+
+[node name="RedDot" type="AnimatedSprite2D" parent="WinningTimer"]
+visible = false
+material = SubResource("ShaderMaterial_anhvg")
+position = Vector2(48, 42)
+sprite_frames = SubResource("SpriteFrames_pnkqm")
+autoplay = "default"
+centered = false
+
+[node name="map" type="TextureRect" parent="WinningTimer"]
+visible = false
+material = SubResource("ShaderMaterial_ikty1")
+offset_left = 457.0
+offset_top = 267.0
+offset_right = 1313.8889
+offset_bottom = 749.0
+texture = ExtResource("154_anhvg")
+expand_mode = 1
+
+[node name="cambutton" type="TextureRect" parent="WinningTimer"]
+material = SubResource("ShaderMaterial_3wu7e")
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -390.0
+offset_top = -98.0
+offset_right = 210.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("156_anhvg")
+script = ExtResource("145_o16e4")
+
+[node name="cam" type="Area2D" parent="WinningTimer/cambutton"]
+position = Vector2(106, -50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinningTimer/cambutton/cam"]
+position = Vector2(191, 107.5)
+shape = SubResource("RectangleShape2D_kk5cu")
 
 [node name="winningscene" type="Node2D" parent="WinningTimer"]
 visible = false
@@ -1099,36 +1256,31 @@ stream = ExtResource("112_tg1gr")
 [node name="schoolbell" type="AudioStreamPlayer2D" parent="WinningTimer/winningscene"]
 stream = ExtResource("113_ldsnd")
 
-[node name="fadewinning" type="AnimationPlayer" parent="WinningTimer"]
-libraries = {
-&"": SubResource("AnimationLibrary_m66co")
-}
+[node name="BonnieAI" type="Node" parent="."]
+script = ExtResource("68_qakv3")
 
-[node name="cambutton" type="TextureRect" parent="WinningTimer"]
-material = SubResource("ShaderMaterial_3wu7e")
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -300.0
-offset_top = -60.0
-offset_right = 300.0
-grow_horizontal = 2
-grow_vertical = 0
-texture = ExtResource("144_3wu7e")
-script = ExtResource("145_o16e4")
+[node name="MoveTimer" type="Timer" parent="BonnieAI"]
+wait_time = 4.970000000000001
+autostart = true
 
-[node name="cam" type="Area2D" parent="WinningTimer/cambutton"]
-position = Vector2(106, -50)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WinningTimer/cambutton/cam"]
-position = Vector2(193.5, 80)
-shape = SubResource("RectangleShape2D_kk5cu")
-
-[node name="CameraFlip" type="AnimatedSprite2D" parent="WinningTimer"]
+[node name="BonnieJumpscare" type="AnimatedSprite2D" parent="."]
+process_mode = 3
 visible = false
-sprite_frames = SubResource("SpriteFrames_j7vub")
-frame = 8
+material = SubResource("ShaderMaterial_k6fhv")
+sprite_frames = SubResource("SpriteFrames_peo4i")
+frame = 10
 frame_progress = 1.0
+centered = false
+
+[node name="ChicaJumpscare" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_1hmql")
+frame_progress = 0.44414335
+centered = false
+
+[node name="FoxyJumpscare" type="AnimatedSprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_be1o8")
+sprite_frames = SubResource("SpriteFrames_22t6e")
+frame_progress = 0.49731714
 centered = false

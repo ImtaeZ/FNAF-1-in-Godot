@@ -9,6 +9,9 @@ var current_state = State.AWAY
 @onready var door_sprite = $"../left door" 
 @onready var main_script = $".." 
 
+# FIX 1: Store the NODE, not the variable value
+@onready var camera_button = $"../WinningTimer/cambutton" 
+
 func _ready() -> void:
 	$MoveTimer.timeout.connect(_on_move_opportunity)
 
@@ -28,14 +31,10 @@ func handle_movement() -> void:
 			current_state = State.AT_DOOR
 			
 		State.AT_DOOR:
-			# Move from DOOR -> ???
 			if is_door_closed():
-				# BLOCKED! Go back to AWAY
 				print("Bonnie blocked! Returning to start.")
 				current_state = State.AWAY
-				# TODO: Play "Banging" sound?
 			else:
-				# SUCCESS! Attack!
 				print("JUMPSCARE!")
 				current_state = State.JUMPSCARE
 				BonnieJumpscare()
@@ -47,6 +46,9 @@ func is_door_closed() -> bool:
 		return true # Door is CLOSED
 
 func BonnieJumpscare() -> void:
+	# Stop winning timer
+	$"../WinningTimer/clock/Timer".stop()
+	
 	$MoveTimer.stop()
 	$"../ChicaAI/MoveTimer".stop()
 	
@@ -54,6 +56,18 @@ func BonnieJumpscare() -> void:
 	$"../JumpScare noise".play()
 	$"../BonnieJumpscare".visible = true
 	$"../BonnieJumpscare".play()
+	
+	if camera_button.camstate != 1:
+		$"../WinningTimer/static".visible = false
+		$"../WinningTimer/whiterect".visible = false
+		$"../WinningTimer/RedDot".visible = false
+		$"../WinningTimer/map".visible = false
+		camera_button.camstate = 1 
+		$"../WinningTimer/CameraFlip".visible = true
+		$"../WinningTimer/CameraFlip".play_backwards()
+		await $"../WinningTimer/CameraFlip".animation_finished
+		$"../WinningTimer/CameraFlip".visible = false
+		$"../WinningTimer/cambutton/cam".visible = false
 	
 	await get_tree().create_timer(1.0, true).timeout
 	$"../JumpScare noise".stop()

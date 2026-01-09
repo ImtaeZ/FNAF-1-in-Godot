@@ -38,6 +38,7 @@ func game_won() -> void:
 	$"../../LightOut/muscibox".stop()
 	$"../../LightOut/powerdown noise".stop()
 	$Timer.stop()
+	
 	# Stop all AI
 	$"../../BonnieAI/MoveTimer".stop()
 	$"../../ChicaAI/MoveTimer".stop()
