@@ -29,6 +29,7 @@ func camInput() -> void:
 		$"../map".visible = true
 		$"../../ShowStage".visible = true
 		camstate *= -1
+		$"../map".update_camera_view($"../map".current_camera)
 		
 	# Close Camera
 	else :
@@ -49,7 +50,7 @@ func camInput() -> void:
 
 	# 4. OPTIONAL: Add a tiny extra delay (Cooldown)
 	# This prevents the camera from accidentally popping back up instantly
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.1).timeout
 
 	# 5. UNLOCK IT
 	is_busy = false

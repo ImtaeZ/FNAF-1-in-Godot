@@ -1,4 +1,4 @@
-[gd_scene load_steps=204 format=3 uid="uid://bym566me85hba"]
+[gd_scene load_steps=207 format=3 uid="uid://bym566me85hba"]
 
 [ext_resource type="Shader" uid="uid://blrcxnhdcf6qx" path="res://shaders/perspective.gdshader" id="1_12wqr"]
 [ext_resource type="Texture2D" uid="uid://n73n8s1cn3ww" path="res://textures/Office inside/58.png" id="1_n0wcf"]
@@ -110,8 +110,10 @@
 [ext_resource type="Texture2D" uid="uid://bnr04tff0f25y" path="res://jumpscare/chica/239.png" id="107_7ywjj"]
 [ext_resource type="Texture2D" uid="uid://d0odnqn5f6b1t" path="res://jumpscare/chica/279.png" id="108_pu11f"]
 [ext_resource type="Texture2D" uid="uid://b0k1pevh78im2" path="res://jumpscare/chica/281.png" id="109_62huj"]
+[ext_resource type="AudioStream" uid="uid://c3iuk52ku6dc6" path="res://audio/static.wav" id="109_vpmm5"]
 [ext_resource type="FontFile" uid="uid://csg4m83lsoct2" path="res://fonts/LcdSolid-VPzB.ttf" id="110_soevi"]
 [ext_resource type="Script" uid="uid://cdypd5inqkvsp" path="res://scripts/clock.gd" id="111_ktwjf"]
+[ext_resource type="Script" uid="uid://c1r8l5qpgan3j" path="res://scripts/camcontrolmap.gd" id="112_h8ouu"]
 [ext_resource type="AudioStream" uid="uid://bumfm0nofqxyu" path="res://audio/CROWD_SMALL_CHIL_EC049202.wav" id="112_tg1gr"]
 [ext_resource type="AudioStream" uid="uid://327x5ujx7bbi" path="res://audio/chimes 2.wav" id="113_ldsnd"]
 [ext_resource type="Texture2D" uid="uid://26toy8au6rw7" path="res://jumpscare/foxy/242.png" id="114_be1o8"]
@@ -617,6 +619,8 @@ animations = [{
 "speed": 60.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h8ouu"]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4lrrt"]
 shader = ExtResource("13_jp1e5")
 shader_parameter/threshold = 0.1
@@ -985,6 +989,7 @@ centered = false
 [node name="fan noise" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("6_hub07")
+volume_db = -9.679
 autoplay = true
 
 [node name="left switch" type="AnimatedSprite2D" parent="."]
@@ -1156,6 +1161,18 @@ sprite_frames = SubResource("SpriteFrames_1q6nw")
 autoplay = "default"
 centered = false
 
+[node name="static2" type="AnimatedSprite2D" parent="WinningTimer"]
+visible = false
+material = SubResource("ShaderMaterial_h8ouu")
+sprite_frames = SubResource("SpriteFrames_1q6nw")
+autoplay = "default"
+frame_progress = 0.764619
+centered = false
+
+[node name="static sound" type="AudioStreamPlayer" parent="WinningTimer/static2"]
+stream = ExtResource("109_vpmm5")
+volume_db = -7.068
+
 [node name="whiterect" type="TextureRect" parent="WinningTimer"]
 visible = false
 material = SubResource("ShaderMaterial_4lrrt")
@@ -1180,6 +1197,7 @@ offset_right = 1313.8889
 offset_bottom = 749.0
 texture = ExtResource("154_anhvg")
 expand_mode = 1
+script = ExtResource("112_h8ouu")
 
 [node name="cambutton" type="TextureRect" parent="WinningTimer"]
 material = SubResource("ShaderMaterial_3wu7e")

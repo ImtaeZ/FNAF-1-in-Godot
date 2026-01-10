@@ -1,18 +1,26 @@
 extends Node
 
 @export var ai_level : int = 20
-const gameover : PackedScene = preload("res://scenes/gameover.tscn")
+const gameover_scene : String = "res://scenes/gameover.tscn"
 
-enum State { AWAY, AT_DOOR, JUMPSCARE }
-var current_state = State.AWAY
+enum State { 
+	SHOW_STAGE,       # Cam 1A
+	DINING_AREA,      # Cam 1B
+	BACKSTAGE,        # Cam 5
+	WEST_HALL,        # Cam 2A
+	SUPPLY_CLOSET,    # Cam 3
+	WEST_HALL_CORNER, # Cam 2B
+	OFFICE            # Inside the room
+}
+
+var current_state = State.SHOW_STAGE
 
 @onready var door_sprite = $"../left door" 
 @onready var main_script = $".." 
-
-# FIX 1: Store the NODE, not the variable value
-@onready var camera_button = $"../WinningTimer/cambutton" 
+@onready var camera_button = $"../WinningTimer/cambutton"
 
 func _ready() -> void:
+	add_to_group("Enemies")
 	$MoveTimer.timeout.connect(_on_move_opportunity)
 
 func _on_move_opportunity() -> void:
@@ -25,30 +33,70 @@ func _on_move_opportunity() -> void:
 		print("Bonnie failed to move. (Rolled: ", roll, ")")
 
 func handle_movement() -> void:
+	var previous_state = current_state
+	
+	# --- MOVEMENT LOGIC ---
 	match current_state:
-		State.AWAY:
-			print("Bonnie moved to the Door!")
-			current_state = State.AT_DOOR
-			
-		State.AT_DOOR:
+		State.SHOW_STAGE:
+			current_state = State.DINING_AREA
+		State.DINING_AREA:
+			if randf() > 0.5: current_state = State.BACKSTAGE
+			else: current_state = State.WEST_HALL
+		State.BACKSTAGE:
+			current_state = State.DINING_AREA
+		State.WEST_HALL:
+			if randf() > 0.5: current_state = State.SUPPLY_CLOSET
+			else: current_state = State.WEST_HALL_CORNER
+		State.SUPPLY_CLOSET:
+			current_state = State.WEST_HALL_CORNER
+		State.WEST_HALL_CORNER:
 			if is_door_closed():
-				print("Bonnie blocked! Returning to start.")
-				current_state = State.AWAY
+				print("Bonnie blocked! Retreating.")
+				current_state = State.DINING_AREA 
+				# TODO: Play banging sound
 			else:
-				print("JUMPSCARE!")
-				current_state = State.JUMPSCARE
+				current_state = State.OFFICE
 				BonnieJumpscare()
 
+	# --- CHECK IF PLAYER CAUGHT HIM MOVING ---
+	if current_state != previous_state:
+		print("Bonnie moved from ", State.keys()[previous_state], " to ", State.keys()[current_state])
+		
+		# 1. Get the camera name for where Bonnie JUST WAS
+		var previous_cam_name = get_camera_name(previous_state)
+		
+		# 2. Check: Is Camera Up (-1) AND Is Player looking at that specific camera?
+		if camera_button.camstate == -1 and $"../WinningTimer/map".current_camera == previous_cam_name:
+			print("Player saw Bonnie move on camera!")
+			
+			# TODO: Trigger static interference here (e.g., camera_button.play_static())
+			# TODO: Disable the camera temporarily for 3-5 seconds
+			$"../WinningTimer/static2".visible = true
+			$"../WinningTimer/static2/static sound".play()
+			await get_tree().create_timer(1).timeout
+			$"../WinningTimer/static2".visible = false
+			$"../WinningTimer/static2/static sound".stop()
+		
+		# Optional: Force update the visuals immediately so he disappears instantly
+		if camera_button.camstate == -1:
+			$"../WinningTimer/map".update_camera_view($"../WinningTimer/map".current_camera)
+
+# Helper function to map your States to Camera Names
+func get_camera_name(state: State) -> String:
+	match state:
+		State.SHOW_STAGE: return "CAM1A"
+		State.DINING_AREA: return "CAM1B"
+		State.BACKSTAGE: return "CAM5"
+		State.WEST_HALL: return "CAM2A"
+		State.SUPPLY_CLOSET: return "CAM3"
+		State.WEST_HALL_CORNER: return "CAM2B"
+		_: return ""
+
 func is_door_closed() -> bool:
-	if door_sprite.frame == 0:
-		return false # Door is OPEN
-	else:
-		return true # Door is CLOSED
+	return door_sprite.frame != 0
 
 func BonnieJumpscare() -> void:
-	# Stop winning timer
 	$"../WinningTimer/clock/Timer".stop()
-	
 	$MoveTimer.stop()
 	$"../ChicaAI/MoveTimer".stop()
 	
@@ -73,8 +121,7 @@ func BonnieJumpscare() -> void:
 	
 	await get_tree().create_timer(1.0, true).timeout
 	$"../JumpScare noise".stop()
-	
 	$"../BonnieJumpscare".visible = false
 	$"../BonnieJumpscare".stop()
 	$"../main office/Camera2D".set_process(true)
-	get_tree().change_scene_to_packed(gameover)
+	get_tree().change_scene_to_file(gameover_scene)
