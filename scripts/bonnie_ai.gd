@@ -69,8 +69,6 @@ func handle_movement() -> void:
 		if camera_button.camstate == -1 and $"../WinningTimer/map".current_camera == previous_cam_name:
 			print("Player saw Bonnie move on camera!")
 			
-			# TODO: Trigger static interference here (e.g., camera_button.play_static())
-			# TODO: Disable the camera temporarily for 3-5 seconds
 			$"../WinningTimer/static2".visible = true
 			$"../WinningTimer/static2/static sound".play()
 			await get_tree().create_timer(1).timeout
@@ -78,7 +76,9 @@ func handle_movement() -> void:
 			$"../WinningTimer/static2/static sound".stop()
 		
 		# Optional: Force update the visuals immediately so he disappears instantly
+		print("CURRENT CAM : ", $"../WinningTimer/map".current_camera)
 		if camera_button.camstate == -1:
+			print("HELLO IS TS WORKING")
 			$"../WinningTimer/map".update_camera_view($"../WinningTimer/map".current_camera)
 
 # Helper function to map your States to Camera Names

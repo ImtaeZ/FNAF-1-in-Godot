@@ -1,7 +1,7 @@
 extends TextureRect
 
 var camstate : int = 1
-var is_busy : bool = false # 1. Create the "Lock" variable
+var is_busy : bool = false
 
 func _ready() -> void:
 	$cam.mouse_entered.connect(camInput)
@@ -12,33 +12,46 @@ func camInput() -> void:
 
 	is_busy = true
 
-	# Open Camera
+	# --- OPEN CAMERA ---
 	if camstate == 1 :
 		$"../CameraFlip".visible = true
 		$"../CameraFlip".play()
 		$"../CameraFlip/flipnoise".play()
+		
+		# 1. Update the image BEFORE the animation finishes so it's ready
+		# This handles showing the correct room (Stage, Dining, etc.) automatically
+		
 		await $"../CameraFlip".animation_finished
 		$"../CameraFlip".visible = false
 		$"../CameraFlip/flipnoise".stop()
 		
+		$"../map".update_camera_view($"../map".current_camera)
 		# Show the UI
 		$"../static".visible = true
 		$"../whiterect".visible = true
 		$"../RedDot".visible = true
-		#$"../RedDot".play()
 		$"../map".visible = true
-		$"../../ShowStage".visible = true
-		camstate *= -1
-		$"../map".update_camera_view($"../map".current_camera)
 		
-	# Close Camera
+		# REMOVED: $"../../ShowStage".visible = true 
+		# Reason: The 'update_camera_view' line above already handled this!
+		
+		camstate *= -1
+		
+	# --- CLOSE CAMERA ---
 	else :
-		# Hide the UI immediately (feels snappier)
+		# Hide the UI immediately
 		$"../static".visible = false
 		$"../whiterect".visible = false
 		$"../RedDot".visible = false
 		$"../map".visible = false
-		$"../../ShowStage".visible = false
+		$"../static2".visible = false
+		$"../static2/static sound".stop()
+		
+		# 2. HIDE THE CURRENT ROOM
+		# We ask the map script: "Who is currently active?" and hide that specific sprite.
+		if $"../map".active_sprite != null:
+			$"../map".active_sprite.visible = false
+		
 		camstate *= -1
 		
 		$"../CameraFlip".visible = true
@@ -48,9 +61,5 @@ func camInput() -> void:
 		$"../CameraFlip".visible = false
 		$"../CameraFlip/flipnoise".stop()
 
-	# 4. OPTIONAL: Add a tiny extra delay (Cooldown)
-	# This prevents the camera from accidentally popping back up instantly
 	await get_tree().create_timer(0.1).timeout
-
-	# 5. UNLOCK IT
 	is_busy = false

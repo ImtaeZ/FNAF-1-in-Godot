@@ -42,7 +42,7 @@ func lightInput(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 				2: frame = 1
 				
 			if $"../main office".frame == 1:
-				if chica_ai.current_state == 1:
+				if chica_ai.current_state == chica_ai.State.EAST_HALL_CORNER:
 					await ChicaWindow()
 				else:
 					await LightBlip()	
