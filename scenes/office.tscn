@@ -1685,7 +1685,7 @@ centered = false
 visible = false
 sprite_frames = SubResource("SpriteFrames_vbh6u")
 autoplay = "default"
-frame_progress = 0.56906635
+frame_progress = 0.540994
 centered = false
 
 [node name="kitchen" type="AnimatedSprite2D" parent="."]
@@ -2038,7 +2038,7 @@ autostart = true
 [node name="FreddyJumpscare" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_82c6c")
-frame_progress = 0.8543636
+frame_progress = 0.7981995
 centered = false
 
 [node name="Freddy1" type="AudioStreamPlayer" parent="."]
