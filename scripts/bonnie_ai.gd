@@ -27,10 +27,11 @@ func _on_move_opportunity() -> void:
 	var roll = randi_range(1, 20)
 	
 	if roll <= ai_level:
-		print("Bonnie Move Successful! (Rolled: ", roll, ")")
+		#print("Bonnie Move Successful! (Rolled: ", roll, ")")
 		handle_movement()
 	else:
-		print("Bonnie failed to move. (Rolled: ", roll, ")")
+		#print("Bonnie failed to move. (Rolled: ", roll, ")")
+		pass
 
 func handle_movement() -> void:
 	var previous_state = current_state
@@ -51,7 +52,7 @@ func handle_movement() -> void:
 			current_state = State.WEST_HALL_CORNER
 		State.WEST_HALL_CORNER:
 			if is_door_closed():
-				print("Bonnie blocked! Retreating.")
+				#print("Bonnie blocked! Retreating.")
 				current_state = State.DINING_AREA 
 				# TODO: Play banging sound
 			else:
@@ -67,7 +68,7 @@ func handle_movement() -> void:
 		
 		# 2. Check: Is Camera Up (-1) AND Is Player looking at that specific camera?
 		if camera_button.camstate == -1 and $"../WinningTimer/map".current_camera == previous_cam_name:
-			print("Player saw Bonnie move on camera!")
+			#print("Player saw Bonnie move on camera!")
 			
 			$"../WinningTimer/static2".visible = true
 			$"../WinningTimer/static2/static sound".play()
@@ -76,9 +77,8 @@ func handle_movement() -> void:
 			$"../WinningTimer/static2/static sound".stop()
 		
 		# Optional: Force update the visuals immediately so he disappears instantly
-		print("CURRENT CAM : ", $"../WinningTimer/map".current_camera)
+		#print("CURRENT CAM : ", $"../WinningTimer/map".current_camera)
 		if camera_button.camstate == -1:
-			print("HELLO IS TS WORKING")
 			$"../WinningTimer/map".update_camera_view($"../WinningTimer/map".current_camera)
 
 # Helper function to map your States to Camera Names

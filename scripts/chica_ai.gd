@@ -28,10 +28,11 @@ func _on_move_opportunity() -> void:
 	var roll = randi_range(1, 20)
 	
 	if roll <= ai_level:
-		print("Chica Move Successful! (Rolled: ", roll, ")")
+		#print("Chica Move Successful! (Rolled: ", roll, ")")
 		handle_movement()
 	else:
-		print("Chica failed to move. (Rolled: ", roll, ")")
+		#print("Chica failed to move. (Rolled: ", roll, ")")
+		pass
 
 func handle_movement() -> void:
 	var previous_state = current_state
@@ -44,15 +45,19 @@ func handle_movement() -> void:
 		State.DINING_AREA:
 			# Randomly go to Restrooms or Kitchen
 			if randf() > 0.5: current_state = State.RESTROOMS
-			else: current_state = State.KITCHEN
+			else: 
+				current_state = State.KITCHEN
+				$"../kitchensound".play()
 				
 		State.RESTROOMS:
 			current_state = State.KITCHEN
+			$"../kitchensound".play()
 			
 		State.KITCHEN:
 			# Go to East Hall
 			current_state = State.EAST_HALL
 			# TODO: Stop playing "Pots and Pans" noise if leaving Kitchen
+			$"../kitchensound".stop()
 			
 		State.EAST_HALL:
 			# Randomly go forward to Corner or retreat to Dining
@@ -63,7 +68,7 @@ func handle_movement() -> void:
 				
 		State.EAST_HALL_CORNER:
 			if is_door_closed():
-				print("Chica blocked! Retreating.")
+				#print("Chica blocked! Retreating.")
 				current_state = State.EAST_HALL # She often steps back just one room
 				# TODO: Play window knocking sound
 			else:
@@ -78,7 +83,7 @@ func handle_movement() -> void:
 		
 		# Check: Camera Up AND Player looking at old room
 		if camera_button.camstate == -1 and $"../WinningTimer/map".current_camera == previous_cam_name:
-			print("Player saw Chica move on camera!")
+			#print("Player saw Chica move on camera!")
 			
 			# Trigger Static
 			$"../WinningTimer/static2".visible = true
@@ -106,7 +111,7 @@ func is_door_closed() -> bool:
 	return door_sprite.frame != 0
 
 func stop_ai() -> void:
-	print("Chica deactivating...")
+	#print("Chica deactivating...")
 	$MoveTimer.stop()
 
 func ChicaJumpscare() -> void:

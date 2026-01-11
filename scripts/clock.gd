@@ -1,14 +1,14 @@
 extends Label
 
 # --- SETTINGS ---
-@export var total_night_duration : float = 60
+@export var total_night_duration : float = 600
 
 var current_hour : int = 12
 
 func _ready() -> void:
 	var seconds_per_hour = total_night_duration / 6.0
 	
-	print("Night Length: ", total_night_duration, "s. One hour is: ", seconds_per_hour, "s.")
+	#print("Night Length: ", total_night_duration, "s. One hour is: ", seconds_per_hour, "s.")
 	
 	$Timer.wait_time = seconds_per_hour
 	$Timer.start() # Start the timer with the new calculated time

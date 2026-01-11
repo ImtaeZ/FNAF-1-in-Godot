@@ -32,8 +32,8 @@ func camInput() -> void:
 		$"../RedDot".visible = true
 		$"../map".visible = true
 		
-		# REMOVED: $"../../ShowStage".visible = true 
-		# Reason: The 'update_camera_view' line above already handled this!
+		$"../../left switch".visible = false
+		$"../../right switch".visible = false
 		
 		camstate *= -1
 		
@@ -46,11 +46,16 @@ func camInput() -> void:
 		$"../map".visible = false
 		$"../static2".visible = false
 		$"../static2/static sound".stop()
+		$"../../left switch".visible = true
+		$"../../right switch".visible = true
 		
 		# 2. HIDE THE CURRENT ROOM
 		# We ask the map script: "Who is currently active?" and hide that specific sprite.
 		if $"../map".active_sprite != null:
 			$"../map".active_sprite.visible = false
+			if $"../map".active_sprite == $"../../kitchen":
+				$"../kitchentext".visible = false
+			$"../../easthallcorneranimation".visible = false
 		
 		camstate *= -1
 		
