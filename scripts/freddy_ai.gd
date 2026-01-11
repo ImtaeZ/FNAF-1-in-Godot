@@ -1,6 +1,6 @@
 extends Node
 
-@export var ai_level : int = 0
+@export var ai_level : int = 20
 const gameover_scene : String = "res://scenes/gameover.tscn"
 
 # 1. EXPANDED STATES (Freddy's Path - Right Side Linear)
@@ -36,7 +36,13 @@ func _on_move_opportunity() -> void:
 		if camera_button.camstate == -1:
 			var my_cam = get_camera_name(current_state)
 			if $"../WinningTimer/map".current_camera == my_cam and $"../WinningTimer/map".current_camera != "CAM6":
-				#print("Freddy frozen by camera!")
+				print("Freddy frozen by camera!")
+				
+				$MoveTimer.stop()
+				await get_tree().create_timer(10).timeout
+				if ai_level > 0: # Only restart if he's actually active
+					$MoveTimer.start()
+					
 				return # STOP HERE
 		
 		#print("Freddy Move Successful! (Rolled: ", roll, ")")
