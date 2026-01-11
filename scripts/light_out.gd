@@ -5,6 +5,7 @@ const gameover : PackedScene = preload("res://scenes/gameover.tscn")
 func lightout() -> void:
 	$"../BonnieAI/MoveTimer".stop()
 	$"../ChicaAI/MoveTimer".stop()
+	$"../FreddyAI/MoveTimer".stop()
 	
 	if $"../left door".frame != 0 or $"../right door".frame != 0:
 		$"../left switch/door noise".play()

@@ -48,3 +48,10 @@ func lock_to_center() -> void:
 	#print(target_x)
 	var tween = create_tween()
 	tween.tween_property(self, "position:x", target_x, 0.2).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	
+func lock_to_right() -> void:
+	set_process(false)
+	var target_x = (officeWidth - screenWidth) / 2 + 150
+	#print(target_x)
+	var tween = create_tween()
+	tween.tween_property(self, "position:x", target_x, 0.2).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)

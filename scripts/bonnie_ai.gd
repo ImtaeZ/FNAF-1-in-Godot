@@ -63,18 +63,26 @@ func handle_movement() -> void:
 	if current_state != previous_state:
 		print("Bonnie moved from ", State.keys()[previous_state], " to ", State.keys()[current_state])
 		
-		# 1. Get the camera name for where Bonnie JUST WAS
-		var previous_cam_name = get_camera_name(previous_state)
+		var previous_cam_name = get_camera_name(previous_state) # Leaving
+		var new_cam_name = get_camera_name(current_state)      # Arriving
+		var player_cam = $"../WinningTimer/map".current_camera
 		
-		# 2. Check: Is Camera Up (-1) AND Is Player looking at that specific camera?
-		if camera_button.camstate == -1 and $"../WinningTimer/map".current_camera == previous_cam_name:
-			#print("Player saw Bonnie move on camera!")
-			
-			$"../WinningTimer/static2".visible = true
-			$"../WinningTimer/static2/static sound".play()
-			await get_tree().create_timer(1).timeout
-			$"../WinningTimer/static2".visible = false
-			$"../WinningTimer/static2/static sound".stop()
+		# Check: Camera Up AND (Looking at Old Room OR Looking at New Room)
+		if camera_button.camstate == -1:
+			if player_cam == previous_cam_name or player_cam == new_cam_name:
+				
+				# 1. Trigger Static
+				$"../WinningTimer/static2".visible = true
+				$"../WinningTimer/static2/static sound".play()
+				
+				# 2. Update visuals immediately so he teleports behind the static
+				$"../WinningTimer/map".update_camera_view(player_cam)
+				
+				# 3. Short Blip (0.25s is snappy, 1.0s is too long)
+				await get_tree().create_timer(1).timeout
+				
+				$"../WinningTimer/static2".visible = false
+				$"../WinningTimer/static2/static sound".stop()
 		
 		# Optional: Force update the visuals immediately so he disappears instantly
 		#print("CURRENT CAM : ", $"../WinningTimer/map".current_camera)
@@ -99,6 +107,7 @@ func BonnieJumpscare() -> void:
 	$"../WinningTimer/clock/Timer".stop()
 	$MoveTimer.stop()
 	$"../ChicaAI/MoveTimer".stop()
+	$"../FreddyAI/MoveTimer".stop()
 	
 	$"../main office/Camera2D".lock_to_center()
 	$"../JumpScare noise".play()

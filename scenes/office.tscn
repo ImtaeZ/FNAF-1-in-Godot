@@ -1,4 +1,4 @@
-[gd_scene load_steps=290 format=3 uid="uid://bym566me85hba"]
+[gd_scene load_steps=327 format=3 uid="uid://bym566me85hba"]
 
 [ext_resource type="Shader" uid="uid://blrcxnhdcf6qx" path="res://shaders/perspective.gdshader" id="1_12wqr"]
 [ext_resource type="Texture2D" uid="uid://n73n8s1cn3ww" path="res://textures/Office inside/58.png" id="1_n0wcf"]
@@ -235,6 +235,42 @@
 [ext_resource type="Texture2D" uid="uid://7cc34yra8lu" path="res://textures/powerbar/2_power.png" id="181_pnupp"]
 [ext_resource type="Texture2D" uid="uid://cvsls37pe238v" path="res://textures/powerbar/3_power.png" id="182_23vxr"]
 [ext_resource type="Texture2D" uid="uid://b1c1whekfd0p4" path="res://textures/powerbar/4_power.png" id="183_taagv"]
+[ext_resource type="Script" uid="uid://j0gv66grym5k" path="res://scripts/freddy_ai.gd" id="215_n7hd7"]
+[ext_resource type="Texture2D" uid="uid://bkj2mmukh8q3u" path="res://jumpscare/actualfreddyjumpscare/39.png" id="216_mnasd"]
+[ext_resource type="Texture2D" uid="uid://dbg0wy5g5bjvt" path="res://jumpscare/actualfreddyjumpscare/485.png" id="217_gib22"]
+[ext_resource type="Texture2D" uid="uid://pvd025j83lw8" path="res://jumpscare/actualfreddyjumpscare/489.png" id="218_q4awy"]
+[ext_resource type="Texture2D" uid="uid://p826n1c5jv74" path="res://jumpscare/actualfreddyjumpscare/490.png" id="219_i5eop"]
+[ext_resource type="Texture2D" uid="uid://cstporxjji4wn" path="res://jumpscare/actualfreddyjumpscare/491.png" id="220_s3yln"]
+[ext_resource type="Texture2D" uid="uid://138jv05t7xsm" path="res://jumpscare/actualfreddyjumpscare/493.png" id="221_qbrc0"]
+[ext_resource type="Texture2D" uid="uid://cajbjdr1cb6lj" path="res://jumpscare/actualfreddyjumpscare/495.png" id="222_mrxve"]
+[ext_resource type="Texture2D" uid="uid://ptm7ows1qc74" path="res://jumpscare/actualfreddyjumpscare/496.png" id="223_w0mxo"]
+[ext_resource type="Texture2D" uid="uid://y6g7odou7q7k" path="res://jumpscare/actualfreddyjumpscare/497.png" id="224_nrgob"]
+[ext_resource type="Texture2D" uid="uid://cwmwx5pp6dy1b" path="res://jumpscare/actualfreddyjumpscare/498.png" id="225_1mxqi"]
+[ext_resource type="Texture2D" uid="uid://gcyblv4610re" path="res://jumpscare/actualfreddyjumpscare/499.png" id="226_a3vqh"]
+[ext_resource type="Texture2D" uid="uid://caqx106nup7dr" path="res://jumpscare/actualfreddyjumpscare/500.png" id="227_xyk5w"]
+[ext_resource type="Texture2D" uid="uid://svboxjrt8e1s" path="res://jumpscare/actualfreddyjumpscare/501.png" id="228_w0jbg"]
+[ext_resource type="Texture2D" uid="uid://1stpiftukxja" path="res://jumpscare/actualfreddyjumpscare/502.png" id="229_l4s84"]
+[ext_resource type="Texture2D" uid="uid://kox4wmdjkspp" path="res://jumpscare/actualfreddyjumpscare/503.png" id="230_4s06s"]
+[ext_resource type="Texture2D" uid="uid://dwrn4etfr8yql" path="res://jumpscare/actualfreddyjumpscare/504.png" id="231_l1cvy"]
+[ext_resource type="Texture2D" uid="uid://dogvcntedxdw4" path="res://jumpscare/actualfreddyjumpscare/505.png" id="232_i8sk8"]
+[ext_resource type="Texture2D" uid="uid://b0j0w14netlvi" path="res://jumpscare/actualfreddyjumpscare/506.png" id="233_j0jtl"]
+[ext_resource type="Texture2D" uid="uid://bpe41dj6uoroe" path="res://jumpscare/actualfreddyjumpscare/507.png" id="234_5bjrd"]
+[ext_resource type="Texture2D" uid="uid://3drpj6qgrixa" path="res://jumpscare/actualfreddyjumpscare/508.png" id="235_nt78o"]
+[ext_resource type="Texture2D" uid="uid://d3sljbfr77cwe" path="res://jumpscare/actualfreddyjumpscare/509.png" id="236_xtxaq"]
+[ext_resource type="Texture2D" uid="uid://nycskst4ul7h" path="res://jumpscare/actualfreddyjumpscare/510.png" id="237_dw5kf"]
+[ext_resource type="Texture2D" uid="uid://bk1cfxi0s8whl" path="res://jumpscare/actualfreddyjumpscare/511.png" id="238_gy2jk"]
+[ext_resource type="Texture2D" uid="uid://m6a6buvr8qsg" path="res://jumpscare/actualfreddyjumpscare/512.png" id="239_ltcow"]
+[ext_resource type="Texture2D" uid="uid://bu63o8kkvhitj" path="res://jumpscare/actualfreddyjumpscare/513.png" id="240_l860h"]
+[ext_resource type="Texture2D" uid="uid://cbndeqdpqoo1v" path="res://jumpscare/actualfreddyjumpscare/514.png" id="241_rvl0s"]
+[ext_resource type="Texture2D" uid="uid://br77uif7yr2ss" path="res://jumpscare/actualfreddyjumpscare/515.png" id="242_83mpk"]
+[ext_resource type="Texture2D" uid="uid://ckxfdudocht02" path="res://jumpscare/actualfreddyjumpscare/516.png" id="243_kcptb"]
+[ext_resource type="Texture2D" uid="uid://dsyc18vo20h1q" path="res://jumpscare/actualfreddyjumpscare/517.png" id="244_1swix"]
+[ext_resource type="Texture2D" uid="uid://dvogfxrc2li6k" path="res://jumpscare/actualfreddyjumpscare/518.png" id="245_n8vjr"]
+[ext_resource type="Texture2D" uid="uid://b8opah132kypn" path="res://jumpscare/actualfreddyjumpscare/519.png" id="246_vn5dx"]
+[ext_resource type="Texture2D" uid="uid://dd3tulpg3tl7" path="res://jumpscare/actualfreddyjumpscare/521.png" id="247_1rcxj"]
+[ext_resource type="AudioStream" uid="uid://cx0oy5tl7kpb4" path="res://audio/Laugh_Giggle_Girl_2d.wav" id="249_i5eop"]
+[ext_resource type="AudioStream" uid="uid://cogy3qgocn08x" path="res://audio/Laugh_Giggle_Girl_8d.wav" id="250_i5eop"]
+[ext_resource type="AudioStream" uid="uid://dujejrwddpsiw" path="res://audio/Laugh_Giggle_Girl_1d.wav" id="250_s3yln"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vilxk"]
 shader = ExtResource("1_12wqr")
@@ -1258,6 +1294,110 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_82c6c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("216_mnasd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("217_gib22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("218_q4awy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("219_i5eop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("220_s3yln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("221_qbrc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("222_mrxve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("223_w0mxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("224_nrgob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("225_1mxqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("226_a3vqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("227_xyk5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("228_w0jbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("229_l4s84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("230_4s06s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("231_l1cvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("232_i8sk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("233_j0jtl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("234_5bjrd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("235_nt78o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("236_xtxaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("237_dw5kf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("238_gy2jk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("239_ltcow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("240_l860h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("241_rvl0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("242_83mpk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("243_kcptb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("244_1swix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("245_n8vjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("246_vn5dx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("247_1rcxj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_be1o8"]
 shader = ExtResource("1_12wqr")
 shader_parameter/zoom = 0.015
@@ -1539,14 +1679,13 @@ centered = false
 [node name="easthallcorner" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_pnupp")
-frame = 7
 centered = false
 
 [node name="easthallcorneranimation" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_vbh6u")
 autoplay = "default"
-frame_progress = 0.7853956
+frame_progress = 0.79332155
 centered = false
 
 [node name="kitchen" type="AnimatedSprite2D" parent="."]
@@ -1888,6 +2027,28 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_1hmql")
 frame_progress = 0.44414335
 centered = false
+
+[node name="FreddyAI" type="Node" parent="."]
+script = ExtResource("215_n7hd7")
+
+[node name="MoveTimer" type="Timer" parent="FreddyAI"]
+wait_time = 3.08
+autostart = true
+
+[node name="FreddyJumpscare" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_82c6c")
+frame_progress = 0.3031264
+centered = false
+
+[node name="Freddy1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("250_s3yln")
+
+[node name="Freddy2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("250_i5eop")
+
+[node name="Freddy3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("249_i5eop")
 
 [node name="FoxyJumpscare" type="AnimatedSprite2D" parent="."]
 visible = false

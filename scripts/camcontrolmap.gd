@@ -5,6 +5,7 @@ var active_sprite : AnimatedSprite2D = null
 
 @onready var bonnie = $"../../BonnieAI"
 @onready var chica = $"../../ChicaAI"
+@onready var freddy = $"../../FreddyAI"
 
 func _ready() -> void:
 	$CAM1A.input_event.connect(CAM1A)
@@ -110,23 +111,31 @@ func update_camera_view(cam_name: String) -> void:
 			active_sprite = $"../../ShowStage"
 			var b_here = (bonnie.current_state == bonnie.State.SHOW_STAGE)
 			var c_here = (chica.current_state == chica.State.SHOW_STAGE)
-			if b_here and c_here:
-				active_sprite.frame = 1
-			elif b_here:
+			var f_here = (freddy.current_state == freddy.State.SHOW_STAGE)
+			
+			if b_here and c_here and f_here:
+				active_sprite.frame = [0, 1].pick_random()
+			elif b_here and f_here:
 				active_sprite.frame = 3 
-			elif c_here:
+			elif c_here and f_here:
 				active_sprite.frame = 2
+			elif f_here :
+				active_sprite.frame = [4, 5].pick_random()
 			else :
-				active_sprite.frame = 4
+				active_sprite.frame = 6
 
 		"CAM1B": # Dining Area
 			active_sprite = $"../../DiningHall"
 			var b_here = (bonnie.current_state == bonnie.State.DINING_AREA)
 			var c_here = (chica.current_state == chica.State.DINING_AREA)
+			var f_here = (freddy.current_state == freddy.State.DINING_AREA)
+			
 			if b_here:
 				active_sprite.frame = randi_range(1, 2)
 			elif c_here:
 				active_sprite.frame = randi_range(3, 4)
+			elif f_here:
+				active_sprite.frame = 5
 			else:
 				active_sprite.frame = 0
 				
@@ -168,25 +177,34 @@ func update_camera_view(cam_name: String) -> void:
 		"CAM7": 
 			active_sprite = $"../../restroom"
 			var c_here = (chica.current_state == chica.State.RESTROOMS)
+			var f_here = (freddy.current_state == freddy.State.RESTROOMS)
+			
 			if c_here:
 				active_sprite.frame = [1, 2].pick_random()
+			elif f_here:
+				active_sprite.frame = 3
 			else:
 				active_sprite.frame = 0
 				
 		"CAM4A": 
 			active_sprite = $"../../easthall"
 			var c_here = (chica.current_state == chica.State.EAST_HALL)
+			var f_here = (freddy.current_state == freddy.State.EAST_HALL)
 			if c_here:
 				active_sprite.frame = [1, 2].pick_random()
+			elif f_here:
+				active_sprite.frame = 3
 			else:
 				active_sprite.frame = [0, 4, 5].pick_random()
 				
 		"CAM4B": 
 			active_sprite = $"../../easthallcorner"
 			var c_here = (chica.current_state == chica.State.EAST_HALL_CORNER)
+			var f_here = (freddy.current_state == freddy.State.EAST_HALL_CORNER)
 			if c_here:
-				#active_sprite.frame = 1
 				$"../../easthallcorneranimation".visible = true
+			elif f_here:
+				active_sprite.frame = 4
 			else:
 				active_sprite.frame = [0, 5, 6, 7, 8].pick_random()
 				
