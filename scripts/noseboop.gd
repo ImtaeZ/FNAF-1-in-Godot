@@ -8,4 +8,4 @@ func noseInput(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 		if name == "noseboop":
 			if not $"boop sound".playing:
 				$"boop sound".play()
-				$"../LightOut".lightout()
+				#$"../LightOut".lightout()

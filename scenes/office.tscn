@@ -1,4 +1,4 @@
-[gd_scene load_steps=284 format=3 uid="uid://bym566me85hba"]
+[gd_scene load_steps=290 format=3 uid="uid://bym566me85hba"]
 
 [ext_resource type="Shader" uid="uid://blrcxnhdcf6qx" path="res://shaders/perspective.gdshader" id="1_12wqr"]
 [ext_resource type="Texture2D" uid="uid://n73n8s1cn3ww" path="res://textures/Office inside/58.png" id="1_n0wcf"]
@@ -230,6 +230,11 @@
 [ext_resource type="Texture2D" uid="uid://d07ajuwp4es7a" path="res://textures/CamScene/showstage/224.png" id="161_anxu1"]
 [ext_resource type="Texture2D" uid="uid://du7kb5s7jdo6q" path="res://textures/CamScene/showstage/355.png" id="162_mmoyk"]
 [ext_resource type="Texture2D" uid="uid://bk3u0bgogjbbi" path="res://textures/CamScene/showstage/484.png" id="163_nq0uu"]
+[ext_resource type="Script" uid="uid://csjb8eguk3plu" path="res://scripts/power.gd" id="179_ldx8l"]
+[ext_resource type="Texture2D" uid="uid://c655kqwqiys3v" path="res://textures/powerbar/1_power.png" id="180_t52rv"]
+[ext_resource type="Texture2D" uid="uid://7cc34yra8lu" path="res://textures/powerbar/2_power.png" id="181_pnupp"]
+[ext_resource type="Texture2D" uid="uid://cvsls37pe238v" path="res://textures/powerbar/3_power.png" id="182_23vxr"]
+[ext_resource type="Texture2D" uid="uid://b1c1whekfd0p4" path="res://textures/powerbar/4_power.png" id="183_taagv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vilxk"]
 shader = ExtResource("1_12wqr")
@@ -1020,6 +1025,26 @@ shader_parameter/threshold = 0.1
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kk5cu"]
 size = Vector2(595, 93)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_chl3u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("180_t52rv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181_pnupp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("182_23vxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("183_taagv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="Animation" id="Animation_oeypd"]
 length = 0.001
 tracks/0/type = "value"
@@ -1521,7 +1546,7 @@ centered = false
 visible = false
 sprite_frames = SubResource("SpriteFrames_vbh6u")
 autoplay = "default"
-frame_progress = 0.87082803
+frame_progress = 0.7853956
 centered = false
 
 [node name="kitchen" type="AnimatedSprite2D" parent="."]
@@ -1737,6 +1762,47 @@ theme_override_font_sizes/font_size = 30
 text = "-CAMERA DISABLED-
 AUDIO ONLY"
 horizontal_alignment = 1
+
+[node name="power" type="Label" parent="WinningTimer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -614.0
+offset_top = 253.0
+offset_right = -378.0
+offset_bottom = 286.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("110_soevi")
+theme_override_font_sizes/font_size = 24
+text = "Power left: "
+script = ExtResource("179_ldx8l")
+
+[node name="usage" type="Label" parent="WinningTimer/power"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = 28.5
+offset_right = 118.0
+offset_bottom = 61.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("110_soevi")
+theme_override_font_sizes/font_size = 24
+text = "Usage:"
+
+[node name="powerbar" type="AnimatedSprite2D" parent="WinningTimer/power"]
+position = Vector2(140, 54)
+scale = Vector2(0.16863899, 0.168639)
+sprite_frames = SubResource("SpriteFrames_chl3u")
 
 [node name="winningscene" type="Node2D" parent="WinningTimer"]
 visible = false

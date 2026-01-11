@@ -7,7 +7,6 @@ func lightout() -> void:
 	$"../ChicaAI/MoveTimer".stop()
 	
 	if $"../left door".frame != 0 or $"../right door".frame != 0:
-		print("close door")
 		$"../left switch/door noise".play()
 		$"../right switch/door noise".play()
 	$"../WinningTimer/cambutton".visible = false
